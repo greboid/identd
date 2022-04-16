@@ -4,12 +4,13 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/kouhin/envflag"
 	"net"
 	"os"
 	"os/signal"
 	"strings"
 	"syscall"
+
+	"github.com/csmith/envflag"
 )
 
 var (
@@ -18,10 +19,7 @@ var (
 )
 
 func main() {
-	if err := envflag.Parse(); err != nil {
-		fmt.Printf("Unable to load config: %s\r\n", err.Error())
-		return
-	}
+	envflag.Parse()
 	sigWait := make(chan os.Signal, 1)
 	signal.Notify(sigWait, os.Interrupt, syscall.SIGTERM, syscall.SIGQUIT)
 	done := make(chan bool, 1)

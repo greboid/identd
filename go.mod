@@ -1,5 +1,5 @@
 module github.com/greboid/identd
 
-go 1.17
+go 1.18
 
-require github.com/kouhin/envflag v0.0.0-20150818174321-0e9a86061649
+require github.com/csmith/envflag v1.0.0
