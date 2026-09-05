@@ -10,7 +10,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/csmith/envflag"
+	"github.com/csmith/envflag/v2"
 )
 
 var (
